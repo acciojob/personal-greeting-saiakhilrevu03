@@ -4,7 +4,7 @@ import React,{useState} from "react";
 const App = () => {
   const [name,setName] = useState("");
 
-  const updateName = (e)=>{
+  const handleChange = (e)=>{
       setName(e.target.value);
   }
   return (
