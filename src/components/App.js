@@ -1,35 +1,19 @@
+import React, { useState } from "react";
 
-import React,{useState} from "react";
+function App() {
+  const [name, setName] = useState("");
 
-const App = () => {
-  const [name,setName] = useState("");
-
-  const handleChange = (e)=>{
-      setName(e.target.value);
-  }
   return (
     <div>
-        {/* Do not remove the main div */}
-        <div style={{ textAlign: "center", marginTop: "50px" }}>
-      {/* Input Field */}
       <input
         type="text"
         placeholder="Enter your name"
         value={name}
-        onChange={handleChange}
-        style={{
-          padding: "10px",
-          fontSize: "16px",
-          borderRadius: "8px",
-          border: "1px solid #ccc",
-        }}
+        onChange={(e) => setName(e.target.value)}
       />
-
-      {/* Greeting (only if name is not empty) */}
-      {name && <h1 style={{ marginTop: "20px" }}>Hello, {name}!</h1>}
+      <p>Hello {name}!</p>
     </div>
-    </div>
-  )
+  );
 }
 
-export default App
+export default App;
